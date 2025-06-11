@@ -73,11 +73,7 @@ const Signup = () => {
           onClick={handleGoogleSignup}
           style={styles.googleButton}
         >
-          <img
-          //  src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Google_Logo.png"
-            //alt="Google logo"
-            //style={{ width: 20, marginRight: 10 }}
-           /> 
+          
           Sign Up with Google
         </button>
 
