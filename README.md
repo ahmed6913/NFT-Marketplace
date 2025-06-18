@@ -6,7 +6,7 @@ Notion link - https://www.notion.so/UGP-POS-Web-App-scroll-down-to-view-NFT-mark
 
 <br>
 
-UI sketch -
+UI Mockups -
 
 ## 📄 License
 
