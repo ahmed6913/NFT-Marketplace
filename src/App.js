@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
+import Marketplace from './pages/Marketplace'; // ✅ New import
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { auth } from './services/firebase';
-import { useState, useEffect } from 'react';
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -35,12 +35,12 @@ const App = () => {
 
   return (
     <Router>
-      {/* Tailwind Test Banner - will Remove it later */}
+      {/* Tailwind Test Banner - Remove later */}
       <div className="bg-green-500 text-white p-4 text-center">
         Tailwind is working! (Remove this after testing)
-      </div> 
+      </div>
 
-      <Routes> 
+      <Routes>
         <Route
           path="/"
           element={user ? <Navigate to="/dashboard" /> : <Navigate to="/login" />}
@@ -55,9 +55,11 @@ const App = () => {
         />
         <Route
           path="/dashboard"
-          element={
-            user ? <Dashboard user={user} onLogout={handleLogout} /> : <Navigate to="/login" />
-          }
+          element={user ? <Dashboard user={user} onLogout={handleLogout} /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/marketplace"
+          element={user ? <Marketplace /> : <Navigate to="/login" />} // ✅ Protected route
         />
       </Routes>
     </Router>
