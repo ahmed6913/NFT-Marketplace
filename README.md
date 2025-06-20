@@ -35,7 +35,7 @@ UI Mockups - https://excalidraw.com/#json=mYbAm7ox2wrVI1ZiG0uFS,BCOM2v3S19dFFIj4
 
 ### Community 
 
-  community - https://discord.gg/3dvyMzNp
+  Community - https://discord.gg/3dvyMzNp
 
 ## 📄 License
 
