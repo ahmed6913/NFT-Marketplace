@@ -33,6 +33,8 @@ UI Mockups - https://excalidraw.com/#json=mYbAm7ox2wrVI1ZiG0uFS,BCOM2v3S19dFFIj4
 - **NFT Standard** – ERC-721 or ERC-1155
 - **Storage**: IPFS (via NFT.Storage or Pinata)
 
+  community - https://discord.gg/3dvyMzNp
+
 ## 📄 License
 
 This project is **Not licensed for reuse**.  
