@@ -8,6 +8,31 @@ Notion link - https://www.notion.so/UGP-POS-Web-App-scroll-down-to-view-NFT-mark
 
 UI Mockups -
 
+### Tech stack
+
+### 🔧 **Frontend (Client-Side)**
+
+- **React** – UI framework
+- **Tailwind CSS** – Styling and responsive design
+- **Web3.js / Ethers.js** – Connect to the Ethereum blockchain
+- **Wallet Integration** – MetaMask (for NFT interaction)
+
+### 🔧 **Backend**
+
+- **Firebase** (BaaS)
+    - Firebase Auth – User authentication
+    - Firestore – Realtime database
+    - Firebase Functions – Serverless backend logic (minting logic, etc.)
+    - Firebase Hosting – Hosting your web app (optional)
+
+### 🔧 **Blockchain Layer**
+
+- **Solidity Smart Contracts** – For NFT minting, rewards, and marketplace
+- **Ethereum Testnet** (e.g., Goerli or Sepolia) – For development/testing
+- Hardhat/Truffle - For development
+- **NFT Standard** – ERC-721 or ERC-1155
+- **Storage**: IPFS (via NFT.Storage or Pinata)
+
 ## 📄 License
 
 This project is **Not licensed for reuse**.  
