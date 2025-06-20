@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import dummyNFTs from '../utils/nft';
 import NFTCard from '../components/Marketplace/NFTCard';
@@ -17,12 +18,9 @@ const Marketplace = () => {
       if (sortOption === 'lowest') {
         return parseFloat(a.price) - parseFloat(b.price);
       }
-      return 0; // you can add more logic later
+      // Add more sorting logic if needed
+      return 0;
     });
-
-    console.log('Loaded NFTs:', dummyNFTs);
-console.log('Filtered NFTs:', filteredNFTs);
-
 
   return (
     <div className="p-4 sm:p-8">
@@ -31,11 +29,18 @@ console.log('Filtered NFTs:', filteredNFTs);
         <SearchBar query={query} setQuery={setQuery} />
         <Filters sortOption={sortOption} setSortOption={setSortOption} />
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {filteredNFTs.map(nft => (
-          <NFTCard key={nft.id} nft={nft} />
-        ))}
-      </div>
+
+      {filteredNFTs.length > 0 ? (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {filteredNFTs.map(nft => (
+            <NFTCard key={nft.id} nft={nft} />
+          ))}
+        </div>
+      ) : (
+        <div className="text-center text-gray-500 mt-12">
+          No NFTs match your search.
+        </div>
+      )}
     </div>
   );
 };
