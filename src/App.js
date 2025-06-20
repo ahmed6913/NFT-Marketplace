@@ -8,6 +8,7 @@ import OwnedNFTs from './pages/OwnedNFTs';
 import Profile from './pages/Profile';
 import Navbar from './components/Navbar';
 
+
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { auth } from './services/firebase';
 
@@ -59,6 +60,7 @@ const App = () => {
         <Route path="/marketplace" element={user ? <Marketplace /> : <Navigate to="/login" />} />
         <Route path="/ownednfts" element={user ? <OwnedNFTs /> : <Navigate to="/login" />} />
         <Route path="/profile" element={user ? <Profile /> : <Navigate to="/login" />} />
+       
       </Routes>
     </Router>
   );

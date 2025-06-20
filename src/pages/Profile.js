@@ -4,7 +4,7 @@ export default function Profile() {
   const user = {
     name: "Alex Johnson",
     email: "alex.johnson@example.com",
-    avatar: "/placeholder.svg",
+   // avatar: "/placeholder.svg",
     joinDate: "March 2023",
   };
 
