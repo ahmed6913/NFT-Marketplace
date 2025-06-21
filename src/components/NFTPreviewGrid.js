@@ -28,7 +28,7 @@ const mockNFTs = [
 const NFTPreviewGrid = () => {
   return (
     <section className="mt-10">
-      <h2 className="text-2xl font-bold mb-4 text-indigo-700">🔥 Trending NFTs</h2>
+      <h2 className="text-2xl font-bold mb-4 ">🔥 Trending NFTs</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {mockNFTs.map((nft) => (
           <div

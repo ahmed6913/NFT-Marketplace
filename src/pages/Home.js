@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import NFTPreviewGrid from '../components/NFTPreviewGrid';
 
+
 function Home({ user }) {
-  const [page, setPage] = useState('home');
   const [walletConnected, setWalletConnected] = useState(false);
   const [walletAddress, setWalletAddress] = useState('');
   const [username, setUsername] = useState('');
@@ -15,27 +15,26 @@ function Home({ user }) {
   }, [user]);
 
   function connectWallet() {
-  if (typeof window.ethereum === 'undefined') {
-    window.open('https://metamask.io/download/', '_blank');
-    return alert('MetaMask is not installed. Redirecting to MetaMask website...');
+    if (typeof window.ethereum === 'undefined') {
+      window.open('https://metamask.io/download/', '_blank');
+      return alert('MetaMask is not installed. Redirecting to MetaMask website...');
+    }
+
+    window.ethereum
+      .request({ method: 'eth_requestAccounts' })
+      .then((accounts) => {
+        if (accounts.length === 0) {
+          alert('No accounts found.');
+        } else {
+          setWalletConnected(true);
+          setWalletAddress(accounts[0]);
+          alert('Wallet connected: ' + accounts[0]);
+        }
+      })
+      .catch((err) => {
+        alert('Failed to connect wallet: ' + err.message);
+      });
   }
-
-  window.ethereum
-    .request({ method: 'eth_requestAccounts' })
-    .then((accounts) => {
-      if (accounts.length === 0) {
-        alert('No accounts found.');
-      } else {
-        setWalletConnected(true);
-        setWalletAddress(accounts[0]);
-        alert('Wallet connected: ' + accounts[0]);
-      }
-    })
-    .catch((err) => {
-      alert('Failed to connect wallet: ' + err.message);
-    });
-}
-
 
   function renderHeroBanner() {
     return (
@@ -63,13 +62,13 @@ function Home({ user }) {
     ];
 
     return (
-      <section className="bg-white p-6 rounded-lg shadow-md">
+      <section className="bg-white p-6 rounded-lg shadow-md mb-8">
         <h2 className="text-xl font-semibold mb-4">Recent Activity</h2>
         <ul className="space-y-3">
           {activities.map((activity) => (
             <li key={activity.id} className="border-b pb-2">
               <p>{activity.message}</p>
-              <span className="text-sm bg-white">{activity.timestamp}</span>
+              <span className="text-sm text-gray-500">{activity.timestamp}</span>
             </li>
           ))}
         </ul>
@@ -77,35 +76,50 @@ function Home({ user }) {
     );
   }
 
-  function renderPage() {
-    switch (page) {
-      case 'home':
-        return (
-          <div>
-            {renderHeroBanner()}
-            {renderActivityFeed()}
-            <NFTPreviewGrid />
-            {walletConnected && (
-              <p className="mt-4 text-sm text-[#004085]">
-                Connected wallet: {walletAddress}
-              </p>
-            )}
+  function renderAboutSection() {
+    return (
+      
+      <section className="bg-white p-6 rounded-lg shadow-md mb-8 text-gray-700">
+        <h2 className="text-2xl font-bold mb-4 ">🔥 About Me</h2>
+        <div className="text-center">
+          
+          <div className="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500 overflow-hidden">
+            
+            <img
+              src="/founder.jpg"
+              alt="Shaikh Saim"
+              className="w-full h-full object-cover"
+            />
           </div>
-        );
-      case 'marketplace':
-        return <div className="text-[#004085]">Marketplace page content</div>;
-      case 'nftsowned':
-        return <div className="text-[#004085]">NFTs you own will appear here</div>;
-      case 'profile':
-        return <div className="text-[#004085]">User profile info</div>;
-      default:
-        return <div className="text-[#842029]">Page not found</div>;
-    }
+          <h3 className="text-xl font-semibold">Shaikh Saim</h3>
+          <p className="text-sm text-purple-600 mb-2">Full Stack Web3 Developer & Cybersecurity Enthusiast</p>
+          <p className="text-sm mb-4 italic">
+            “Web3 isn't just about technology — it's about empowering User to own their digital future and
+            participate in the decentralized economy.”
+          </p>
+          <p className="text-xs text-gray-500">
+            Currently building a blockchain-based NFT rewards marketplace for retail that bridges traditional commerce
+            with Web3 technology. Passionate about decentralization, open source development, and User empowerment
+            through accessible blockchain solutions.
+          </p>
+        </div>
+      </section>
+    );
   }
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: 'bg-white p-6 rounded-lg shadow-md' }}>
-      <main className="p-6 max-w-4xl mx-auto">{renderPage()}</main>
+    <div className="min-h-screen bg-gray-50">
+      <main className="p-6 max-w-4xl mx-auto">
+        {renderHeroBanner()}
+        {renderActivityFeed()}
+        <NFTPreviewGrid />
+        {walletConnected && (
+          <p className="mt-4 text-sm text-indigo-700">
+            Connected wallet: {walletAddress}
+          </p>
+        )}
+        {renderAboutSection()}
+      </main>
     </div>
   );
 }
