@@ -39,6 +39,6 @@ UI Mockups - https://excalidraw.com/#json=mYbAm7ox2wrVI1ZiG0uFS,BCOM2v3S19dFFIj4
 
 ## 📄 License
 
-This project is **Not licensed for reuse**.  
+This project is **NOT LICENSE FOR REUSE OR COPY**.  
 All rights reserved © 2025 [shaikh saim].  
 You may not copy, distribute, or modify any part of this project without explicit permission.
