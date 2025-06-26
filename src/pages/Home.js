@@ -79,7 +79,7 @@ function Home({ user }) {
   function renderAboutSection() {
     return (
       
-      <section className="bg-white p-6 rounded-lg shadow-md mb-8 text-gray-700">
+      <section className="bg-white p-6 rounded-lg shadow-md mb-8 text-black-500">
         <h2 className="text-2xl font-bold mb-4 ">🔥 About Me</h2>
         <div className="text-center">
           
@@ -93,11 +93,11 @@ function Home({ user }) {
           </div>
           <h3 className="text-xl font-semibold">Shaikh Saim</h3>
           <p className="text-sm text-purple-600 mb-2">Full Stack Web3 Developer & Cybersecurity Enthusiast</p>
-          <p className="text-sm mb-4 italic">
+          <p className="text-sm mb-5 ">
             “Web3 isn't just about technology — it's about empowering User to own their digital future and
             participate in the decentralized economy.”
           </p>
-          <p className="text-xs text-gray-500">
+          <p className="text-xs text-black-500">
             Currently building a blockchain-based NFT rewards marketplace for retail that bridges traditional commerce
             with Web3 technology. Passionate about decentralization, open source development, and User empowerment
             through accessible blockchain solutions.
