@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import NFTPreviewGrid from '../components/NFTPreviewGrid';
+import ConfettiButton from "../components/ConfettiButton";
+
 
 
 function Home({ user }) {
@@ -63,7 +65,7 @@ function Home({ user }) {
 
     return (
       <section className="bg-white p-6 rounded-lg shadow-md mb-8">
-        <h2 className="text-xl font-semibold mb-4">Recent Activity</h2>
+        <h2 className="text-xl font-semibold mb-4"> 🔥 Recent Activity</h2>
         <ul className="space-y-3">
           {activities.map((activity) => (
             <li key={activity.id} className="border-b pb-2">
@@ -72,6 +74,9 @@ function Home({ user }) {
             </li>
           ))}
         </ul>
+        {/* 🎉 Confetti Button */}
+        <ConfettiButton />
+
       </section>
     );
   }
@@ -79,12 +84,12 @@ function Home({ user }) {
   function renderAboutSection() {
     return (
       
-      <section className="bg-white p-6 rounded-lg shadow-md mb-8 text-gray-700">
-        <h2 className="text-2xl font-bold mb-4 ">🔥 About Me</h2>
+      <section className="bg-white p-6 rounded-lg shadow-md mb-8 text-black-500">
+        <h2 className="text-2xl font-bold mb-4 ">🔥 Developer Team</h2>
         <div className="text-center">
-          
+
           <div className="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500 overflow-hidden">
-            
+
             <img
               src="/founder.jpg"
               alt="Shaikh Saim"
@@ -93,16 +98,18 @@ function Home({ user }) {
           </div>
           <h3 className="text-xl font-semibold">Shaikh Saim</h3>
           <p className="text-sm text-purple-600 mb-2">Full Stack Web3 Developer & Cybersecurity Enthusiast</p>
-          <p className="text-sm mb-4 italic">
+          <p className="text-sm mb-5 ">
             “Web3 isn't just about technology — it's about empowering User to own their digital future and
             participate in the decentralized economy.”
           </p>
-          <p className="text-xs text-gray-500">
+          <p className="text-xs text-black-500">
             Currently building a blockchain-based NFT rewards marketplace for retail that bridges traditional commerce
             with Web3 technology. Passionate about decentralization, open source development, and User empowerment
             through accessible blockchain solutions.
           </p>
         </div>
+        <br />
+        <p className="text-center text-sm text-gray-500">© 2025 Shaikh Saim. All rights reserved.</p>
       </section>
     );
   }
@@ -123,5 +130,7 @@ function Home({ user }) {
     </div>
   );
 }
+
+
 
 export default Home;

@@ -1,11 +1,14 @@
-import React from 'react';
+import React from "react";
+import { useAccount, useEnsName } from "wagmi";
 
 export default function Profile() {
+  const { address, isConnected } = useAccount();
+  const { data: ensName } = useEnsName({ address });
+
   const user = {
-    name: "Alex Johnson",
-    email: "alex.johnson@example.com",
-   // avatar: "/placeholder.svg",
-    joinDate: "March 2023",
+    name: ensName || address?.slice(0, 6) + "..." + address?.slice(-4),
+    avatar: "/placeholder.svg",
+    joinDate: "June 2025", // You can later make this dynamic
   };
 
   const purchasedNFTs = [
@@ -42,6 +45,14 @@ export default function Profile() {
       day: "numeric",
     });
 
+  if (!isConnected) {
+    return (
+      <div className="min-h-screen flex items-center justify-center text-gray-700">
+        <p>Please connect your wallet to view your profile.</p>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gray-50 p-4 md:p-6 lg:p-8">
       <div className="max-w-6xl mx-auto space-y-6">
@@ -49,11 +60,11 @@ export default function Profile() {
         <div className="bg-white rounded-xl shadow-lg overflow-hidden">
           <div className="bg-gradient-to-r from-indigo-500 to-purple-600 px-6 py-8 md:px-8 flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-6">
             <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-white shadow-lg">
-              <img src={user.avatar} alt={user.name} className="w-full h-full object-cover" />
+              <img src={user.avatar} alt="User Avatar" className="w-full h-full object-cover" />
             </div>
             <div className="text-white text-center md:text-left">
               <h1 className="text-2xl md:text-3xl font-bold mb-2">{user.name}</h1>
-              <p className="text-white/90 text-lg mb-1">{user.email}</p>
+              <p className="text-white/80 text-sm">Wallet Address: {address}</p>
               <p className="text-white/80 text-sm">Member since {user.joinDate}</p>
             </div>
           </div>
@@ -87,6 +98,7 @@ export default function Profile() {
           <div className="hidden md:block overflow-x-auto">
             <table className="w-full">
               <thead className="bg-gray-50">
+
                 <tr>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">NFT</th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Store</th>
@@ -98,7 +110,11 @@ export default function Profile() {
                 {purchasedNFTs.map((nft) => (
                   <tr key={nft.id} className="hover:bg-gray-50">
                     <td className="px-6 py-4 whitespace-nowrap flex items-center gap-4">
-                      <img src={nft.image} alt={nft.name} className="w-12 h-12 rounded-lg object-cover" />
+                      <img
+                        src={nft.image}
+                        alt={nft.name}
+                        className="w-12 h-12 rounded-lg object-cover"
+                      />
                       <span className="text-sm font-medium text-gray-900">{nft.name}</span>
                     </td>
                     <td className="px-6 py-4 text-sm text-gray-500">{nft.storeName}</td>
@@ -114,7 +130,11 @@ export default function Profile() {
           <div className="md:hidden divide-y divide-gray-200">
             {purchasedNFTs.map((nft) => (
               <div key={nft.id} className="p-4 hover:bg-gray-50 flex items-center space-x-4">
-                <img src={nft.image} alt={nft.name} className="w-16 h-16 rounded-lg object-cover" />
+                <img
+                  src={nft.image}
+                  alt={nft.name}
+                  className="w-16 h-16 rounded-lg object-cover"
+                />
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-medium text-gray-900">{nft.name}</p>
                   <p className="text-sm text-gray-500">{nft.storeName}</p>
@@ -129,3 +149,4 @@ export default function Profile() {
     </div>
   );
 }
+
