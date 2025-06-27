@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import NFTPreviewGrid from '../components/NFTPreviewGrid';
+import ConfettiButton from "../components/ConfettiButton";
+
 
 
 function Home({ user }) {
@@ -63,7 +65,7 @@ function Home({ user }) {
 
     return (
       <section className="bg-white p-6 rounded-lg shadow-md mb-8">
-        <h2 className="text-xl font-semibold mb-4">Recent Activity</h2>
+        <h2 className="text-xl font-semibold mb-4"> 🔥 Recent Activity</h2>
         <ul className="space-y-3">
           {activities.map((activity) => (
             <li key={activity.id} className="border-b pb-2">
@@ -72,6 +74,9 @@ function Home({ user }) {
             </li>
           ))}
         </ul>
+        {/* 🎉 Confetti Button */}
+        <ConfettiButton />
+
       </section>
     );
   }
@@ -80,11 +85,11 @@ function Home({ user }) {
     return (
       
       <section className="bg-white p-6 rounded-lg shadow-md mb-8 text-black-500">
-        <h2 className="text-2xl font-bold mb-4 ">🔥 About Me</h2>
+        <h2 className="text-2xl font-bold mb-4 ">🔥 Developer Team</h2>
         <div className="text-center">
-          
+
           <div className="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500 overflow-hidden">
-            
+
             <img
               src="/founder.jpg"
               alt="Shaikh Saim"
@@ -103,6 +108,8 @@ function Home({ user }) {
             through accessible blockchain solutions.
           </p>
         </div>
+        <br />
+        <p className="text-center text-sm text-gray-500">© 2025 Shaikh Saim. All rights reserved.</p>
       </section>
     );
   }
@@ -123,5 +130,7 @@ function Home({ user }) {
     </div>
   );
 }
+
+
 
 export default Home;
