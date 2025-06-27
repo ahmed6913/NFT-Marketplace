@@ -98,6 +98,7 @@ export default function Profile() {
           <div className="hidden md:block overflow-x-auto">
             <table className="w-full">
               <thead className="bg-gray-50">
+
                 <tr>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">NFT</th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Store</th>
