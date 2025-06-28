@@ -64,7 +64,7 @@ const NFTPreviewGrid = () => {
             <div key={nft.id} className="flex-none w-72 md:w-80 snap-start group cursor-pointer">
               <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:-translate-y-2">
                 <div className="relative overflow-hidden">
-                  <img
+                 <img
                     src={nft.image}
                     alt={nft.name}
                     className="w-full h-64 md:h-72 object-cover transition-transform duration-500 group-hover:scale-110"
