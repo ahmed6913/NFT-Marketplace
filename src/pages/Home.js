@@ -84,7 +84,8 @@ function Home({ user }) {
   function renderAboutSection() {
     return (
       
-      <section className="bg-white p-6 rounded-lg shadow-md mb-8 text-black-500">
+      <section className="bg-white p-6 rounded-lg shadow-md mb-8 mt-16 text-black-500">
+
         <h2 className="text-2xl font-bold mb-4 ">🔥 Developer Team</h2>
         <div className="text-center">
 
