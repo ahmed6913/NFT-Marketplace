@@ -17,7 +17,7 @@ const links = [
   {
     icon: <FaGithub className="text-xl" />,
     label: "Github",
-    desc: "To report bugs, request features and contribute to the project.",
+    desc: "To report bugs, request features and contribute to the project (paid).",
     url: "https://github.com/ahmed6913?tab=overview&from=2025-06-01&to=2025-06-29",
   },
 ];
@@ -102,7 +102,7 @@ const CommunityLinks = () => {
           </svg>
         </div>
         <p className="text-gray-600 text-left">
-          To report bugs, request features and contribute to the project.
+          To report bugs, request features and contribute to the project (paid).
         </p>
       </a>
     </div>

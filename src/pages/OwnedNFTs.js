@@ -54,7 +54,7 @@ export default function OwnedNFTs() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50 p-6">
       <div className="max-w-7xl mx-auto">
         <div className="mb-8">
-        <h1 className="text-2xl font-bold mb-2">
+        <h1 className="text-3xl font-bold text-center mb-10 text-indigo-600">
             Your NFTs
           </h1>
          

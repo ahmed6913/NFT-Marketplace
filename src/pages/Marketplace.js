@@ -38,7 +38,7 @@ const Marketplace = () => {
 
   return (
     <div className="p-4 sm:p-8">
-      <h1 className="text-2xl font-bold mb-6">NFT Marketplace</h1>
+      <h1 className="text-3xl font-bold text-center mb-10 text-indigo-600">NFT Marketplace</h1>
 
       {/* Tabs */}
       <div className="flex space-x-4 mb-6">

@@ -5,42 +5,42 @@ const mockNFTs = [
     id: 1,
     name: "Cyber Ape #112",
     creator: "Footlockerker Store",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "https://i.ibb.co/q3WtTLyK/7748166.jpg",
     price: "0.15 ETH",
   },
   {
     id: 2,
     name: "HypeBeast Runner",
     creator: "SneakerVault",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "https://i.ibb.co/Q75tLB8h/5348934.jpg",
     price: "0.2 ETH",
   },
   {
     id: 3,
     name: "Urban Samurai",
     creator: "Nike NFT Lab",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "https://i.ibb.co/2YSwRDj2/900-31.jpg",
     price: "0.3 ETH",
   },
   {
     id: 4,
     name: "Digital Kicks #001",
     creator: "MetaVerse Studios",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "https://i.ibb.co/jvL4H5CL/317cae30-c8ce-4cae-a9c8-a4624c3ae699.jpg",
     price: "0.25 ETH",
   },
   {
     id: 5,
     name: "Neon Dreams",
     creator: "CryptoArt Collective",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "https://i.ibb.co/YTF6z1gk/3d-cartoon-style-character.jpg",
     price: "0.18 ETH",
   },
   {
     id: 6,
     name: "Future Warrior",
     creator: "BlockChain Creatives",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "https://i.ibb.co/1twQ4vdj/7748187.jpg",
     price: "0.35 ETH",
   },
 ]
@@ -49,9 +49,7 @@ const NFTPreviewGrid = () => {
   return (
     <section className="mt-16 bg-white p-6 rounded-2xl shadow-lg">
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-2xl md:text-3xl font-bold text-black flex items-center gap-2">
-          <span>🔥</span> Trending NFTs
-        </h2>
+       
         <button className="text-indigo-600 hover:text-purple-600 font-medium text-sm transition-colors duration-200">
           View All
         </button>

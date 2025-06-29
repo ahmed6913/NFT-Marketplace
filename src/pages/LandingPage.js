@@ -1,22 +1,23 @@
 // src/pages/LandingPage.js
-import React from "react";
+import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import FeedbackCarousel from "../components/FeedbackCarousel";
 import AnimatedTooltipGroup from "../components/AnimatedTooltipGroup";
-import FeaturedNFTs from "../components/FeaturedNFTs"; // top of the file
+import FeaturedNFTs from "../components/FeaturedNFTs";
 import CommunityLinks from "../components/CommunityLinks";
-
-
-
-
-
-
+import FeedbackForm from "../components/Feedback";
+import FeedbackDisplay from "../components/FeedbackDisplay";
 
 const LandingPage = () => {
     const navigate = useNavigate();
+    const feedbackRef = useRef(null); // ✅ Ref for scrolling
 
     const handleConnectWallet = () => {
-        // Just go to /home
         navigate("/home");
+    };
+
+    const handleScrollToFeedback = () => {
+        feedbackRef.current?.scrollIntoView({ behavior: "smooth" });
     };
 
     return (
@@ -27,7 +28,7 @@ const LandingPage = () => {
                     NFT Rewards for Every Purchase
                 </h1>
                 <p className="text-lg md:text-xl mb-6">
-                    Earn NFTs as loyalty rewards from your favorite retail brands.
+                    Earn NFTs as loyalty rewards from your favorite brands.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <button
@@ -36,16 +37,19 @@ const LandingPage = () => {
                     >
                         Connect Wallet
                     </button>
-                    <a
-                        href="#feedback"
+                    <button
+                        onClick={handleScrollToFeedback}
                         className="bg-white/20 border border-white text-white font-semibold py-3 px-6 rounded-xl hover:bg-white/30 transition"
                     >
                         Give Feedback
-                    </a>
+                    </button>
                 </div>
             </section>
 
-            {/* Features Section */}
+            {/* Live User Feedback Carousel */}
+            <FeedbackCarousel />
+
+            {/* Why Choose Us */}
             <section className="py-16 px-6 max-w-6xl mx-auto">
                 <h2 className="text-3xl font-bold text-center mb-10 text-indigo-600">
                     Why Choose Us?
@@ -81,42 +85,39 @@ const LandingPage = () => {
             {/* How It Works */}
             <section className="py-16 px-6 bg-gray-50">
                 <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-3xl font-bold mb-6 text-indigo-600">How It Works</h2>
+                    <h2 className="text-3xl font-bold mb-6 text-indigo-600">
+                        How It Works
+                    </h2>
                     <p className="mb-8 text-gray-700">
-                        Connect your wallet → Shop with partner brands → Earn NFTs as rewards →
-                        Use or Trade them on our marketplace.
+                        Connect your wallet → Shop with partner brands → Earn NFTs as
+                        rewards → Use or Trade them on our marketplace.
                     </p>
                 </div>
             </section>
 
-            {/* ✅ Featured NFTs Section */}
+            {/* Featured NFTs */}
             <FeaturedNFTs />
 
-
+            {/* Tooltip Team */}
             <AnimatedTooltipGroup />
-            <div className="mt-5"> {/* Add this wrapper to control spacing */}
+
+            {/* Community */}
+            <div className="mt-5">
                 <CommunityLinks />
             </div>
 
-
             {/* Feedback Section */}
             <section
-                id="feedback"
+                ref={feedbackRef} // ✅ Attach ref for scroll
                 className="py-16 px-6 max-w-4xl mx-auto text-center"
             >
                 <h2 className="text-3xl font-bold text-indigo-600 mb-4">Your Feedback Matters</h2>
                 <p className="text-gray-600 mb-6">
-                    We’re building with you in mind. Share what you love or what could be
-                    improved!
+                    We’re building with you in mind. Share what you love or what could be improved!
                 </p>
-                <a
-                    href="https://forms.gle/YOUR_FORM_LINK" // Replace with actual form link
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold py-3 px-6 rounded-xl hover:shadow-lg transition"
-                >
-                    Submit Feedback
-                </a>
+
+                <FeedbackForm />
+               
             </section>
 
             {/* Footer */}

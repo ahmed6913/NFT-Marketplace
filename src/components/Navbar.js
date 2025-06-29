@@ -1,10 +1,11 @@
 // src/components/Navbar.js
 import React from 'react';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 function Navbar() {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const items = [
     { label: 'Home', route: '/home' },
@@ -16,6 +17,7 @@ function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-white border-b-2 border-indigo-500 shadow-sm">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        
         {/* Logo */}
         <div
           className="text-2xl font-bold text-indigo-600 tracking-tight cursor-pointer"
@@ -35,9 +37,18 @@ function Navbar() {
               {label}
             </li>
           ))}
+
+          {/* Back to Landing Page */}
+          {location.pathname !== '/' && (
+            <li
+              onClick={() => navigate('/')}
+              className="cursor-pointer hover:text-indigo-600 transition-colors px-2 py-1 rounded-md hover:bg-indigo-100"
+            >
+              Back
+            </li>
+          )}
         </ul>
 
-        
         {/* Connect Wallet Button */}
         <div className="ml-4">
           <ConnectButton showBalance={false} accountStatus="address" />

@@ -7,11 +7,11 @@ function Home() {
   const { address, isConnected } = useAccount();
 
   const renderHeroBanner = () => (
-    <section className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white p-10 rounded-lg shadow-lg mb-8">
-      <h1 className="text-3xl font-bold mb-2">
+    <section className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white w-full py-24 text-center mb-12">
+      <h1 className="text-4xl md:text-6xl font-bold mb-4">
         Get rewarded with NFTs every time you shop.
       </h1>
-      <p className="text-xl">
+      <p className="text-lg md:text-xl">
         Welcome to Lazarus Mint 👋
       </p>
     </section>
@@ -26,13 +26,13 @@ function Home() {
       },
       {
         id: 2,
-        message: '🎁 You’ve unlocked a reward from Nike',
+        message: "🎁 You've unlocked a reward from Nike",
         timestamp: 'Yesterday',
       },
     ];
 
     return (
-      <section className="bg-white p-6 rounded-lg shadow-md mb-8">
+      <section className="bg-white py-10 px-6 max-w-6xl mx-auto mb-12">
         <h2 className="text-xl font-semibold mb-4"> 🔥 Recent Activity</h2>
         <ul className="space-y-3">
           {activities.map((activity) => (
@@ -42,48 +42,27 @@ function Home() {
             </li>
           ))}
         </ul>
-        <ConfettiButton />
+        <div className="mt-6 flex justify-center">
+          <ConfettiButton />
+        </div>
       </section>
     );
   };
 
-  const renderAboutSection = () => (
-    <section className="bg-white p-6 rounded-lg shadow-md mb-8 mt-16 text-black-500">
-      <h2 className="text-2xl font-bold mb-4">🔥 Developer Team</h2>
-      <div className="text-center">
-        <div className="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500 overflow-hidden">
-          <img
-             src="/founder.jpg"
-            alt="Shaikh Saim"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <h3 className="text-xl font-semibold">Shaikh Saim</h3>
-        <p className="text-sm text-purple-600 mb-2">Full Stack Web3 Developer & DevOps Enthusiast</p>
-        <p className="text-sm mb-5">
-          “Web3 isn't just about technology — it's about empowering users to own their digital future and participate in the decentralized economy.”
-        </p>
-        <p className="text-xs text-black-500">
-          Currently building a blockchain-based NFT rewards marketplace for retail that bridges traditional commerce with Web3 technology.
-        </p>
-      </div>
-      <br />
-      <p className="text-center text-sm text-gray-500">© 2025 Shaikh Saim. All rights reserved.</p>
-    </section>
-  );
-
   return (
-    <div className="min-h-screen bg-gray-50">
-      <main className="p-6 max-w-4xl mx-auto">
+    <div className="min-h-screen bg-white text-gray-800">
+      <main className="pb-10">
         {renderHeroBanner()}
         {renderActivityFeed()}
-        <NFTPreviewGrid />
+        <section className="max-w-4xl mx-auto mb-12 text-center">
+          <h2 className="text-3xl font-bold text-center mb-10 text-indigo-600">🔥 Trending NFTs</h2>
+          <NFTPreviewGrid />
+        </section>
         {isConnected && (
-          <p className="mt-4 text-sm text-indigo-700">
+          <p className="mt-4 text-sm text-indigo-700 text-center">
             Connected wallet: {address}
           </p>
         )}
-        {renderAboutSection()}
       </main>
     </div>
   );

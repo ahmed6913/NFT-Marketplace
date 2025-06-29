@@ -12,6 +12,7 @@
     "@testing-library/user-event": "^13.5.0",
     "canvas-confetti": "^1.9.3",
     "firebase": "^11.8.1",
+    "framer-motion": "^12.19.2",
     "lucide-react": "^0.518.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
