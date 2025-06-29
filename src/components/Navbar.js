@@ -39,9 +39,9 @@ function Navbar() {
           ))}
 
           {/* Back to Landing Page */}
-          {location.pathname !== '/LandingPage' && (
+          {location.pathname !== '/' && (
             <li
-              onClick={() => navigate('/LandingPage')}
+              onClick={() => navigate('/')}
               className="cursor-pointer hover:text-indigo-600 transition-colors px-2 py-1 rounded-md hover:bg-indigo-100"
             >
               Back
