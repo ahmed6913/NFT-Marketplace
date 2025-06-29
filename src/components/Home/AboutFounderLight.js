@@ -1,8 +1,7 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Button } from "../../ui/button";
+import { Card, CardContent } from "../../ui/card";
+import { Badge } from "../../ui/badge";
 import { Quote, Github, Linkedin, Twitter, Mail, Circle } from "lucide-react";
-import Image from "next/image";
 
 export default function AboutFounder() {
   return (
@@ -10,34 +9,32 @@ export default function AboutFounder() {
       <div className="container mx-auto px-4 md:px-6 max-w-6xl">
         <Card className="bg-gradient-to-tr from-indigo-900 to-slate-800 text-white border border-slate-700 shadow-xl rounded-2xl">
           <CardContent className="p-8 md:p-12">
-            {/* Meet the Founder Badge */}
+            {/* Badge */}
             <div className="flex justify-center mb-8">
               <Badge className="bg-purple-600 text-white px-4 py-2 text-sm font-medium hover:bg-purple-700 transition-colors">
                 Meet the Founder
               </Badge>
             </div>
 
-            {/* Main Heading */}
+            {/* Title */}
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                Built by a Web3 Entutaist{" "}
+                Built by a Web3 Enthusiast{" "}
                 <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-                  For Web3 Entutaists
+                  For Web3 Enthusiasts
                 </span>
               </h2>
             </div>
 
-            {/* Main Content Grid */}
+            {/* Content Grid */}
             <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
-              {/* Left - Image */}
+              {/* Founder Image */}
               <div className="flex justify-center lg:justify-start">
                 <div className="relative">
                   <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-purple-500 shadow-lg">
-                    <Image
-                      src="/founder.jpg" // Update with your actual image
+                    <img
+                      src="/founder.jpg"
                       alt="Shaikh Saim - Founder"
-                      width={192}
-                      height={192}
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -47,14 +44,16 @@ export default function AboutFounder() {
                 </div>
               </div>
 
-              {/* Right - Content */}
+              {/* Founder Details */}
               <div className="space-y-8">
                 <Card className="bg-indigo-900 border border-slate-700">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <Quote className="h-6 w-6 text-purple-400 flex-shrink-0 mt-1" />
+                      <Quote className="h-6 w-6 text-purple-400 mt-1" />
                       <blockquote className="text-lg italic font-medium leading-relaxed text-slate-200">
-                        "Web3 isn't just about technology — it's about empowering students to own their digital future and participate in the decentralized economy."
+                        "Web3 isn't just about technology — it's about empowering
+                        students to own their digital future and participate in
+                        the decentralized economy."
                       </blockquote>
                     </div>
                   </CardContent>
@@ -66,33 +65,23 @@ export default function AboutFounder() {
                     Creator & Web3 Engineer
                   </p>
                   <p className="text-slate-300 text-base leading-relaxed mb-6">
-                    Currently building a blockchain-based NFT rewards marketplace for retail that bridges traditional
-                    commerce with Web3 technology. Passionate about decentralization, open source, and student empowerment.
+                    Currently building a blockchain-based NFT rewards marketplace
+                    for retail that bridges traditional commerce with Web3
+                    technology. Passionate about decentralization, open source,
+                    and student empowerment.
                   </p>
 
                   <div className="flex flex-wrap gap-3">
-                    <Button
-                      variant="outline"
-                      className="bg-slate-900 border-slate-700 text-white hover:bg-slate-800 hover:border-purple-500"
-                    >
+                    <Button className="bg-slate-900 border border-slate-700 text-white hover:bg-slate-800 hover:border-purple-500">
                       <Mail className="w-4 h-4 mr-2" /> Contact
                     </Button>
-                    <Button
-                      variant="outline"
-                      className="bg-slate-900 border-slate-700 text-white hover:bg-slate-800 hover:border-purple-500"
-                    >
+                    <Button className="bg-slate-900 border border-slate-700 text-white hover:bg-slate-800 hover:border-purple-500">
                       <Github className="w-4 h-4 mr-2" /> GitHub
                     </Button>
-                    <Button
-                      variant="outline"
-                      className="bg-slate-900 border-slate-700 text-white hover:bg-slate-800 hover:border-purple-500"
-                    >
+                    <Button className="bg-slate-900 border border-slate-700 text-white hover:bg-slate-800 hover:border-purple-500">
                       <Linkedin className="w-4 h-4 mr-2" /> LinkedIn
                     </Button>
-                    <Button
-                      variant="outline"
-                      className="bg-slate-900 border-slate-700 text-white hover:bg-slate-800 hover:border-purple-500"
-                    >
+                    <Button className="bg-slate-900 border border-slate-700 text-white hover:bg-slate-800 hover:border-purple-500">
                       <Twitter className="w-4 h-4 mr-2" /> Twitter
                     </Button>
                   </div>
@@ -100,12 +89,17 @@ export default function AboutFounder() {
               </div>
             </div>
 
-            {/* Mission */}
+            {/* Mission Section */}
             <Card className="bg-indigo-950 border border-slate-700 text-indigo-100">
               <CardContent className="p-6 text-center">
-                <h4 className="text-lg font-semibold text-purple-300 mb-3">Our Mission</h4>
+                <h4 className="text-lg font-semibold text-purple-300 mb-3">
+                  Our Mission
+                </h4>
                 <p className="text-slate-300 max-w-3xl mx-auto text-base leading-relaxed">
-                  To democratize NFT rewards in retail using transparent and rewarding Web3 technology, making blockchain benefits accessible to students and everyday consumers through seamless integration with traditional commerce.
+                  To democratize NFT rewards in retail using transparent and
+                  rewarding Web3 technology, making blockchain benefits accessible
+                  to students and everyday consumers through seamless integration
+                  with traditional commerce.
                 </p>
               </CardContent>
             </Card>
