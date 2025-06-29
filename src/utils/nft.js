@@ -8,7 +8,7 @@ const dummyNFTs = [
     tags: ['rare', 'ape'],
     etherscan: 'https://etherscan.io/token/0x1234567890abcdef',
   },
-  {
+ /* {
     id: 2,
     name: 'HypeBeast Runner',
     store: 'Nike Vault',
@@ -16,7 +16,7 @@ const dummyNFTs = [
     image: 'https://i.ibb.co/Q75tLB8h/5348934.jpg',
     tags: ['sneaker', 'trending'],
     etherscan: 'https://etherscan.io/token/0xabcdef1234567890',
-  },
+  },*/
 ];
 
 export default dummyNFTs;
