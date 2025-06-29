@@ -53,13 +53,13 @@ function Home() {
       <div className="text-center">
         <div className="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500 overflow-hidden">
           <img
-            src="/founder.jpg"
+             src="/founder.jpg"
             alt="Shaikh Saim"
             className="w-full h-full object-cover"
           />
         </div>
         <h3 className="text-xl font-semibold">Shaikh Saim</h3>
-        <p className="text-sm text-purple-600 mb-2">Full Stack Web3 Developer & Cybersecurity Enthusiast</p>
+        <p className="text-sm text-purple-600 mb-2">Full Stack Web3 Developer & DevOps Enthusiast</p>
         <p className="text-sm mb-5">
           “Web3 isn't just about technology — it's about empowering users to own their digital future and participate in the decentralized economy.”
         </p>
