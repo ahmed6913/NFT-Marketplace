@@ -2,6 +2,8 @@
 # NFT-Marketplace
 Buy, Sell and Trade NFTs (Next-Gen Loyalty Powered by Blockchain).
 
+![Screenshot 2025-06-29 184716](https://github.com/user-attachments/assets/f2a1d1b8-d6e1-4b52-acd4-a834feea1089)
+
 Notion link - https://www.notion.so/UGP-POS-Web-App-scroll-down-to-view-NFT-marketplace-plan-1f46368c9a0a806db0a0fc8fc5a43e2b?source=copy_link
 
 <br>
