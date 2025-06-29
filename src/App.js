@@ -47,7 +47,7 @@ const App = () => {
         <RainbowKitProvider chains={[mainnet]} theme={customTheme}>
           {showNavbar && <Navbar />}
           <Routes>
-            <Route path="/" element={<LandingPage />} />
+            <Route path="/LandingPage" element={<LandingPage />} />
             <Route path="/home" element={<Home />} />
             <Route path="/marketplace" element={<Marketplace />} />
             <Route path="/ownednfts" element={<OwnedNFTs />} />
