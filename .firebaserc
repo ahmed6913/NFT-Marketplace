@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "nft-marketplace-81f39"
-  }
+    "default": "nft-marketplace-81f39",
+    "host": "nft-marketplace-81f39"
+  },
+  "targets": {},
+  "etags": {}
 }
