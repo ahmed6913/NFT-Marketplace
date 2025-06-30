@@ -19,5 +19,14 @@ const firebaseConfig = {
 // Initialize Firebase app
 const app = initializeApp(firebaseConfig);
 
-// Export only Firestore (no auth)
+// Initialize Firestore
 export const db = getFirestore(app);
+
+// Initialize Analytics (browser-only)
+if (typeof window !== 'undefined') {
+  isSupported().then((yes) => {
+    if (yes) {
+      getAnalytics(app);
+    }
+  });
+}

@@ -10,6 +10,8 @@ Notion link - https://www.notion.so/UGP-POS-Web-App-scroll-down-to-view-NFT-mark
 
 UI Mockups - https://excalidraw.com/#json=mYbAm7ox2wrVI1ZiG0uFS,BCOM2v3S19dFFIj4OUUE0w
 
+View live on - https://nft-marketplace-81f39.web.app/
+
 ### Tech stack
 
 ### 🔧 **Frontend (Client-Side)**
