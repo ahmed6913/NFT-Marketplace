@@ -1,11 +1,13 @@
 // src/components/Navbar.js
-import React from 'react';
+import React, { useState } from 'react';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { Menu, X } from 'lucide-react'; // or use Heroicons
 
 function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const items = [
     { label: 'Home', route: '/home' },
@@ -14,6 +16,11 @@ function Navbar() {
     { label: 'Profile', route: '/profile' },
   ];
 
+  const handleNavClick = (route) => {
+    navigate(route);
+    setMenuOpen(false); // close menu on mobile after navigation
+  };
+
   return (
     <nav className="sticky top-0 z-50 bg-white border-b-2 border-indigo-500 shadow-sm">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -21,27 +28,25 @@ function Navbar() {
         {/* Logo */}
         <div
           className="text-2xl font-bold text-indigo-600 tracking-tight cursor-pointer"
-          onClick={() => navigate('/home')}
+          onClick={() => handleNavClick('/home')}
         >
           Lazarus Mint - NFT Marketplace
         </div>
 
-        {/* Navigation Links */}
+        {/* Desktop Nav Links */}
         <ul className="hidden md:flex space-x-6 text-indigo-800 font-medium text-sm">
           {items.map(({ label, route }) => (
             <li
               key={label}
-              onClick={() => navigate(route)}
+              onClick={() => handleNavClick(route)}
               className="cursor-pointer hover:text-indigo-600 transition-colors px-2 py-1 rounded-md hover:bg-indigo-100"
             >
               {label}
             </li>
           ))}
-
-          {/* Back to Landing Page */}
           {location.pathname !== '/' && (
             <li
-              onClick={() => navigate('/')}
+              onClick={() => handleNavClick('/')}
               className="cursor-pointer hover:text-indigo-600 transition-colors px-2 py-1 rounded-md hover:bg-indigo-100"
             >
               Back
@@ -49,12 +54,45 @@ function Navbar() {
           )}
         </ul>
 
-        {/* Connect Wallet Button */}
-        <div className="ml-4">
-          <ConnectButton showBalance={false} accountStatus="address" />
+        {/* Mobile Menu Toggle */}
+        <div className="md:hidden flex items-center space-x-2">
+          <button onClick={() => setMenuOpen(!menuOpen)} className="text-indigo-600">
+            {menuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
 
+        {/* Wallet Connect */}
+        <div className="ml-4 hidden md:block">
+          <ConnectButton showBalance={false} accountStatus="address" />
+        </div>
       </div>
+
+      {/* Mobile Dropdown Menu */}
+      {menuOpen && (
+        <div className="md:hidden px-6 pb-4 pt-2 space-y-2 bg-white border-t border-indigo-200 shadow">
+          {items.map(({ label, route }) => (
+            <div
+              key={label}
+              onClick={() => handleNavClick(route)}
+              className="block text-indigo-800 font-medium text-sm py-2 px-4 rounded hover:bg-indigo-100 cursor-pointer"
+            >
+              {label}
+            </div>
+          ))}
+          {location.pathname !== '/' && (
+            <div
+              onClick={() => handleNavClick('/')}
+              className="block text-indigo-800 font-medium text-sm py-2 px-4 rounded hover:bg-indigo-100 cursor-pointer"
+            >
+              Back
+            </div>
+          )}
+          {/* Show Wallet Connect on mobile inside dropdown */}
+          <div className="pt-2">
+            <ConnectButton showBalance={false} accountStatus="address" />
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
