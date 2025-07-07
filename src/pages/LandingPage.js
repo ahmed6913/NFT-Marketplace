@@ -86,7 +86,7 @@ const LandingPage = () => {
             <section className="py-16 px-6 bg-gray-50">
                 <div className="max-w-4xl mx-auto text-center">
                     <h2 className="text-3xl font-bold mb-6 text-indigo-600">
-                        How It Works
+                        How It Works For Customers
                     </h2>
                     <p className="mb-8 text-gray-700">
                         Connect your wallet → Shop with partner brands → Earn NFTs as
@@ -94,6 +94,48 @@ const LandingPage = () => {
                     </p>
                 </div>
             </section>
+
+            <section className="bg-white py-16 px-6 md:px-20">
+  <div className="max-w-7xl mx-auto text-center">
+    <h2 className="text-4xl md:text-5xl font-bold text-indigo-700 mb-6">
+      For Brands & Businesses
+    </h2>
+    <p className="text-gray-600 text-lg md:text-xl mb-12">
+      Partner with us to offer NFT loyalty rewards and grow customer retention.
+    </p>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+      {/* Option 1 */}
+      <div className="bg-indigo-50 p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <h3 className="text-xl font-semibold text-indigo-700">Become a Brand Partner</h3>
+        <p className="mt-2 text-gray-600 mb-4">
+          Ready to reward your customers with NFTs? Start your journey today.
+        </p>
+        <a
+          href="/partner"
+          className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-md"
+        >
+          Get Started
+        </a>
+      </div>
+
+      {/* Option 2 */}
+      <div className="bg-white border p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <h3 className="text-xl font-semibold text-indigo-700">Need a Demo First?</h3>
+        <p className="mt-2 text-gray-600 mb-4">
+          Curious about how it works? Request a free walkthrough tailored to your brand.
+        </p>
+        <a
+          href="/partner#demo"
+            className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-md"
+        >
+          Request a Demo
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 
             {/* Featured NFTs */}
             <FeaturedNFTs />

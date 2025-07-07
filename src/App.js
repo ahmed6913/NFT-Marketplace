@@ -8,6 +8,13 @@ import Profile from "./pages/Profile";
 import Navbar from "./components/Navbar";
 import LandingPage from "./pages/LandingPage";
 import './App.css';
+import Partner from './pages/Partner';
+
+
+import PartnerPayment from './pages/PartnerPayment';
+
+
+
 
 import {
   getDefaultConfig,
@@ -47,6 +54,8 @@ const App = () => {
         <RainbowKitProvider chains={[mainnet]} theme={customTheme}>
           {showNavbar && <Navbar />}
           <Routes>
+            <Route path="/partner" element={<Partner />} />
+            <Route path="/partner/payment" element={<PartnerPayment />} />
             <Route path="/" element={<LandingPage />} />
             <Route path="/home" element={<Home />} />
             <Route path="/marketplace" element={<Marketplace />} />

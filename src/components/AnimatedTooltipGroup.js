@@ -4,7 +4,7 @@ import React from "react";
 const teamMembers = [
   {
     name: "saim",
-    role: "Lead Developer & Founder",
+    role: "Lead Software Developer & Founder",
     image: "/founder.jpg", 
   },
  
