@@ -39,3 +39,4 @@ const FeaturedNFTs = () => {
 };
 
 export default FeaturedNFTs;
+
