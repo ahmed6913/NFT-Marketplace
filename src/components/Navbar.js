@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react'; // or use Heroicons
+import { Menu, X } from 'lucide-react';
 
 function Navbar() {
   const navigate = useNavigate();
@@ -14,17 +14,18 @@ function Navbar() {
     { label: 'Market Place', route: '/marketplace' },
     { label: 'NFTs Owned', route: '/ownednfts' },
     { label: 'Profile', route: '/profile' },
+    { label: 'Map', route: '/map' }, // ✅ NEW PAGE
   ];
 
   const handleNavClick = (route) => {
     navigate(route);
-    setMenuOpen(false); // close menu on mobile after navigation
+    setMenuOpen(false);
   };
 
   return (
     <nav className="sticky top-0 z-50 bg-white border-b-2 border-indigo-500 shadow-sm">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        
+
         {/* Logo */}
         <div
           className="text-2xl font-bold text-indigo-600 tracking-tight cursor-pointer"
@@ -87,7 +88,7 @@ function Navbar() {
               Back
             </div>
           )}
-          {/* Show Wallet Connect on mobile inside dropdown */}
+          {/* Wallet Connect inside mobile menu */}
           <div className="pt-2">
             <ConnectButton showBalance={false} accountStatus="address" />
           </div>

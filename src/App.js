@@ -10,6 +10,7 @@ import LandingPage from "./pages/LandingPage";
 import './App.css';
 import Partner from './pages/Partner';
 import PartnerPayment from './pages/PartnerPayment';
+import MapPage from './pages/Map';
 
 import {
   getDefaultConfig,
@@ -90,6 +91,7 @@ const App = () => {
             <Route path="/home" element={<Home />} />
             <Route path="/marketplace" element={<Marketplace />} />
             <Route path="/ownednfts" element={<OwnedNFTs />} />
+            <Route path="/map" element={<MapPage />} />
             <Route path="/profile" element={<Profile />} />
           </Routes>
         </RainbowKitProvider>
