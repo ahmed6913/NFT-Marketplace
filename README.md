@@ -42,7 +42,7 @@ View live on - https://nft-marketplace-81f39.web.app/
 
 ### Community 
 
-  Community - https://discord.gg/3dvyMzNp
+  Join Community - https://discord.gg/3dvyMzNp
 
 ## 📄 License
 
