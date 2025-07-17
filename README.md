@@ -40,9 +40,15 @@ View live on - https://nft-marketplace-81f39.web.app/
 - **NFT Standard** – ERC-721 or ERC-1155
 - **Storage**: IPFS (via NFT.Storage or Pinata)
 
+### **DevOps**
+
+- The application has been dockerise (https://hub.docker.com/r/saim777121/nft-marketplace) follow the instruction to run the dockerise application on your local machine and has basic GitHub CI/CD pipline and deployed on firebase hosting 
+
 ### Community 
 
   Join Community - https://discord.gg/3dvyMzNp
+
+
 
 ## 📄 License
 
