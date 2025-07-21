@@ -7,7 +7,7 @@ import FeaturedNFTs from "../components/FeaturedNFTs";
 import CommunityLinks from "../components/CommunityLinks";
 import FeedbackForm from "../components/Feedback";
 import RotatingText from "../components/RotatingText";
-
+import ChatBox from "../components/ChatBox";
 
 
 const LandingPage = () => {
@@ -88,6 +88,8 @@ const LandingPage = () => {
             {/* ✅ Carousel */}
             <FeedbackCarousel />
 
+            {/* ✅ Global Chat */}
+            <ChatBox />
 
             {/* ✅ Why Choose Us */}
             <section className="py-16 px-6 max-w-6xl mx-auto">
