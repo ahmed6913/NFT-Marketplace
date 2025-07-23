@@ -1,23 +1,20 @@
 
 # NFT-Marketplace
-Buy, Sell and Trade NFTs (Next-Gen Loyalty Powered by Blockchain).
+- Buy, Sell and Trade NFTs (Next-Gen Loyalty Powered by Blockchain).
 
 ![Screenshot 2025-06-29 184716](https://github.com/user-attachments/assets/f2a1d1b8-d6e1-4b52-acd4-a834feea1089)
 ![GitHub Repo stars](https://img.shields.io/github/stars/ahmed6913/web-app-pos?style=social)
 ![GitHub forks](https://img.shields.io/github/forks/ahmed6913/web-app-pos?style=social)
 
 
-Notion link - https://www.notion.so/Lazarus-Mint-1f46368c9a0a80e0ade4fe18a51656d4?source=copy_link
-
+- Notion link - https://www.notion.so/Lazarus-Mint-1f46368c9a0a80e0ade4fe18a51656d4?source=copy_link
 <br>
-
-UI Mockups - https://excalidraw.com/#json=mYbAm7ox2wrVI1ZiG0uFS,BCOM2v3S19dFFIj4OUUE0w
-
-View live on - https://nft-marketplace-81f39.web.app/
+- UI Mockups - https://excalidraw.com/#json=mYbAm7ox2wrVI1ZiG0uFS,BCOM2v3S19dFFIj4OUUE0w
+- View live on - https://nft-marketplace-81f39.web.app/
 
 ### Admin section 
 
-Git repo - https://github.com/ahmed6913/NFT-Marketplace-admin.git
+- Git repo - https://github.com/ahmed6913/NFT-Marketplace-admin.git
 
 ### Tech stack
 
@@ -50,9 +47,7 @@ Git repo - https://github.com/ahmed6913/NFT-Marketplace-admin.git
 
 ### Community 
 
-  Join Community - https://discord.gg/3dvyMzNp
-
-
+- Join Community - https://discord.gg/3dvyMzNp
 
 ## 📄 License
 
