@@ -7,6 +7,9 @@
 ![GitHub forks](https://img.shields.io/github/forks/ahmed6913/web-app-pos?style=social)
 
 
+<img width="1712" height="1417" alt="deepseek_mermaid_20250721_748394" src="https://github.com/user-attachments/assets/d1ca8bb4-88ed-42ba-b27d-c92e38835636" />
+
+
 - Notion link - https://www.notion.so/Lazarus-Mint-1f46368c9a0a80e0ade4fe18a51656d4?source=copy_link
 <br>
 - UI Mockups - https://excalidraw.com/#json=mYbAm7ox2wrVI1ZiG0uFS,BCOM2v3S19dFFIj4OUUE0w
