@@ -10,6 +10,7 @@
 - Notion link - https://www.notion.so/Lazarus-Mint-1f46368c9a0a80e0ade4fe18a51656d4?source=copy_link
 <br>
 - UI Mockups - https://excalidraw.com/#json=mYbAm7ox2wrVI1ZiG0uFS,BCOM2v3S19dFFIj4OUUE0w
+<br>
 - View live on - https://nft-marketplace-81f39.web.app/
 
 ### Admin section 
