@@ -15,6 +15,10 @@ UI Mockups - https://excalidraw.com/#json=mYbAm7ox2wrVI1ZiG0uFS,BCOM2v3S19dFFIj4
 
 View live on - https://nft-marketplace-81f39.web.app/
 
+### Admin section 
+
+Git repo - https://github.com/ahmed6913/NFT-Marketplace-admin.git
+
 ### Tech stack
 
 ### 🔧 **Frontend (Client-Side)**
