@@ -45,7 +45,7 @@
 - **NFT Standard** – ERC-721 or ERC-1155
 - **Storage**: IPFS (via NFT.Storage or Pinata)
 
-#🚀 Deployment Instructions
+Deployment Instructions
 
 Follow these steps to run the Lazarus Mint NFT Marketplace locally or deploy it for production.
 
