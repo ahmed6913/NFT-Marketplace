@@ -45,6 +45,52 @@
 - **NFT Standard** – ERC-721 or ERC-1155
 - **Storage**: IPFS (via NFT.Storage or Pinata)
 
+#🚀 Deployment Instructions
+
+Follow these steps to run the Lazarus Mint NFT Marketplace locally or deploy it for production.
+
+### 📦 Prerequisites
+
+Make sure you have the following installed:
+
+- Node.js >= 16
+- npm or yarn
+Optional: Firebase CLI for Firestore/Storage operations
+
+### 🛠️ Local Development
+
+1. Clone the repository
+```
+git clone https://github.com/your-username/nft-marketplace.git
+cd nft-marketplace
+```
+2. Install dependencies
+```
+npm install
+# or
+yarn install
+```
+3. Set up environment variables
+
+Create a .env file in the root directory and add:
+
+```
+VITE_FIREBASE_API_KEY=your_firebase_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
+VITE_EMAILJS_PUBLIC_KEY=your_emailjs_public_key
+```
+4. Run the development server
+```
+npm start
+# or
+yarn start
+```
+App will be available at: http://localhost:3000
+
 ### **DevOps**
 
 - The application has been dockerise (https://hub.docker.com/r/saim777121/nft-marketplace) follow the instruction to run the dockerise application on your local machine and has basic GitHub CI/CD pipline and deployed on firebase hosting 
