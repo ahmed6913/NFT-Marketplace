@@ -1,24 +1,44 @@
 import React, { useRef, useEffect, useState } from "react";
+import { db } from "../services/firebase";
+import {
+  collection,
+  addDoc,
+  query,
+  orderBy,
+  onSnapshot,
+  serverTimestamp,
+} from "firebase/firestore";
 
 const ChatBox = () => {
-  const [messages, setMessages] = useState([
-    { id: 1, user: "anon1", text: "Welcome to the global chat!" },
-    { id: 2, user: "anon2", text: "Say hi to everyone 👋" },
-  ]);
+  const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const messagesEndRef = useRef(null);
+
+  // Fetch chat history and listen for new messages in real time
+  useEffect(() => {
+    const q = query(collection(db, "messages"), orderBy("timestamp"));
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+      const msgs = [];
+      querySnapshot.forEach((doc) => {
+        msgs.push({ id: doc.id, ...doc.data() });
+      });
+      setMessages(msgs);
+    });
+    return () => unsubscribe();
+  }, []);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  const handleSend = (e) => {
+  const handleSend = async (e) => {
     e.preventDefault();
     if (!input.trim()) return;
-    setMessages((prev) => [
-      ...prev,
-      { id: Date.now(), user: "anon", text: input },
-    ]);
+    await addDoc(collection(db, "messages"), {
+      user: "anon",
+      text: input,
+      timestamp: serverTimestamp(),
+    });
     setInput("");
   };
 
