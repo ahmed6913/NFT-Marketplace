@@ -88,7 +88,7 @@ const LandingPage = () => {
             {/* ✅ Carousel */}
             <FeedbackCarousel />
 
-            {/* ✅ Global Chat */}
+            {/* ✅ Global Chat */}  
             <ChatBox />
 
             {/* ✅ Why Choose Us */}
