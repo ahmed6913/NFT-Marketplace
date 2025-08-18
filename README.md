@@ -16,9 +16,10 @@
 <br>
 - View live on - https://nft-marketplace-81f39.web.app/
 
-### Admin section 
+### Admin % web-app section 
 
 - Git repo - https://github.com/ahmed6913/NFT-Marketplace-admin.git
+- Git repo - https://github.com/ahmed6913/web-app-pos.git
 
 ### Tech stack
 
