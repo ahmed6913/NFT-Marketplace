@@ -17,16 +17,18 @@ export const generateSharedSecret = async (privateKey, publicKey) => {
   }
 };
 
-// Base64 + XOR encryption (safer for UTF-8)
+// Simple hex-based encryption (more reliable)
 export const encryptMessage = (message, key) => {
   try {
-    // Convert message to base64 first to ensure safe encoding
-    const messageBase64 = btoa(unescape(encodeURIComponent(message)));
-    const messageBytes = ethers.toUtf8Bytes(messageBase64);
+    // Convert message to hex string first
+    const messageHex = ethers.hexlify(ethers.toUtf8Bytes(message));
 
-    // Convert string key to bytes using keccak256 hash
+    // Convert string key to hash
     const keyHash = ethers.keccak256(ethers.toUtf8Bytes(key));
     const keyBytes = ethers.getBytes(keyHash);
+
+    // Convert hex message to bytes
+    const messageBytes = ethers.getBytes(messageHex);
     const encrypted = new Uint8Array(messageBytes.length);
 
     for (let i = 0; i < messageBytes.length; i++) {
@@ -40,11 +42,12 @@ export const encryptMessage = (message, key) => {
   }
 };
 
-// Base64 + XOR decryption
+// Simple hex-based decryption
 export const decryptMessage = (encryptedHex, key) => {
   try {
     const encryptedBytes = ethers.getBytes(encryptedHex);
-    // Convert string key to bytes using keccak256 hash (same as encryption)
+
+    // Convert string key to hash (same as encryption)
     const keyHash = ethers.keccak256(ethers.toUtf8Bytes(key));
     const keyBytes = ethers.getBytes(keyHash);
     const decrypted = new Uint8Array(encryptedBytes.length);
@@ -53,9 +56,9 @@ export const decryptMessage = (encryptedHex, key) => {
       decrypted[i] = encryptedBytes[i] ^ keyBytes[i % keyBytes.length];
     }
 
-    // Convert back from bytes to string, then decode base64
-    const decryptedString = ethers.toUtf8String(decrypted);
-    const originalMessage = decodeURIComponent(escape(atob(decryptedString)));
+    // Convert decrypted bytes back to hex, then to string
+    const decryptedHex = ethers.hexlify(decrypted);
+    const originalMessage = ethers.toUtf8String(decryptedHex);
 
     return originalMessage;
   } catch (error) {

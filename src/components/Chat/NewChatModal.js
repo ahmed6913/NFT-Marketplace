@@ -39,10 +39,10 @@ const NewChatModal = ({ isOpen, onClose, onChatCreated }) => {
 
       // Create the chat
       const chatId = await createChat(address, walletAddress);
-      
+
       // Notify parent component
       onChatCreated(chatId, walletAddress);
-      
+
       // Reset and close
       setWalletAddress('');
       onClose();

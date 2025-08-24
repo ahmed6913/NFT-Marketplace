@@ -2,12 +2,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useAccount, useWalletClient } from 'wagmi';
 import { subscribeToMessages, sendMessage } from '../../services/firebase';
-import { 
-  encryptMessage, 
-  decryptMessage, 
-  getPublicKeyFromSignature, 
+import {
+  encryptMessage,
+  decryptMessage,
+  getPublicKeyFromSignature,
   generateSharedSecret,
-  shortenAddress 
+  shortenAddress
 } from '../../utils/encryption';
 import { Send, ArrowLeft } from 'lucide-react';
 
@@ -32,12 +32,12 @@ const ChatWindow = ({ chatId, otherParticipant, onBack }) => {
   // Initialize shared secret for encryption
   useEffect(() => {
     const initializeEncryption = async () => {
-      if (!walletClient || !address) return;
-      
+      if (!walletClient || !address || !chatId) return;
+
       try {
-        // For demo purposes, we'll use a simple shared secret based on chat ID
+        // Use chatId as shared secret so both users can decrypt messages
         // In production, implement proper ECDH key exchange
-        const secret = `${chatId}_${address}`;
+        const secret = `chat_${chatId}`;
         console.log('Initialized shared secret:', secret);
         setSharedSecret(secret);
       } catch (error) {
@@ -54,30 +54,26 @@ const ChatWindow = ({ chatId, otherParticipant, onBack }) => {
 
     const unsubscribe = subscribeToMessages(chatId, (chatMessages) => {
       console.log('Received messages from Firestore:', chatMessages.length);
-      
+
       const decryptedMessages = chatMessages.map(msg => {
-        try {
-          if (sharedSecret && msg.content) {
-            console.log('Attempting to decrypt message:', { 
-              messageId: msg.id, 
-              sender: msg.sender, 
-              contentLength: msg.content.length 
-            });
-            const decryptedContent = decryptMessage(msg.content, sharedSecret);
-            console.log('Successfully decrypted message:', decryptedContent);
-            return { ...msg, decryptedContent };
-          }
-          return { ...msg, decryptedContent: 'Decrypting...' };
-        } catch (error) {
-          console.error('Error decrypting message:', { 
-            messageId: msg.id, 
-            error: error.message,
-            content: msg.content 
-          });
-          return { ...msg, decryptedContent: `[Encrypted message from ${msg.sender?.slice(0,6)}...]` };
-        }
+        // Debug: Log what we're getting from Firebase
+        console.log('🔍 MESSAGE DETAILS:', {
+          id: msg.id,
+          sender: msg.sender,
+          content: msg.content,
+          contentType: typeof msg.content,
+          contentLength: msg.content?.length,
+          isEncrypted: msg.content?.startsWith('0x'),
+          fullMessage: JSON.stringify(msg)
+        });
+
+        // Show messages without decryption to test basic functionality
+        return {
+          ...msg,
+          decryptedContent: msg.content || 'Loading...'
+        };
       });
-      
+
       setMessages(decryptedMessages);
     });
 
@@ -86,26 +82,21 @@ const ChatWindow = ({ chatId, otherParticipant, onBack }) => {
 
   const handleSendMessage = async (e) => {
     e.preventDefault();
-    if (!newMessage.trim() || !sharedSecret || loading) return;
+    if (!newMessage.trim() || loading) return;
 
     setLoading(true);
     try {
-      console.log('Sending message:', { chatId, address, message: newMessage.trim(), sharedSecret });
-      
-      // Test encryption/decryption locally first
-      const testEncrypted = encryptMessage(newMessage.trim(), sharedSecret);
-      const testDecrypted = decryptMessage(testEncrypted, sharedSecret);
-      console.log('Encryption test:', { 
-        original: newMessage.trim(), 
-        encrypted: testEncrypted, 
-        decrypted: testDecrypted,
-        match: testDecrypted === newMessage.trim()
+      console.log('Sending message:', {
+        chatId,
+        address,
+        message: newMessage.trim(),
+        plainText: newMessage.trim()
       });
-      
-      // Send to Firestore
-      await sendMessage(chatId, address, newMessage.trim(), testEncrypted);
-      console.log('Message sent to Firestore successfully');
-      
+
+      // Send message without encryption for now (to test basic functionality)
+      await sendMessage(chatId, address, newMessage.trim(), newMessage.trim());
+      console.log('Message sent to Firestore successfully - should be plain text:', newMessage.trim());
+
       setNewMessage('');
     } catch (error) {
       console.error('Detailed error sending message:', error);
@@ -170,16 +161,14 @@ const ChatWindow = ({ chatId, otherParticipant, onBack }) => {
               className={`flex ${isMyMessage(message.sender) ? 'justify-end' : 'justify-start'}`}
             >
               <div
-                className={`max-w-xs lg:max-w-md px-4 py-2 rounded-lg ${
-                  isMyMessage(message.sender)
-                    ? 'bg-indigo-600 text-white'
-                    : 'bg-gray-200 text-gray-900'
-                }`}
+                className={`max-w-xs lg:max-w-md px-4 py-2 rounded-lg ${isMyMessage(message.sender)
+                  ? 'bg-indigo-600 text-white'
+                  : 'bg-gray-200 text-gray-900'
+                  }`}
               >
                 <p className="text-sm">{message.decryptedContent}</p>
-                <p className={`text-xs mt-1 ${
-                  isMyMessage(message.sender) ? 'text-indigo-200' : 'text-gray-500'
-                }`}>
+                <p className={`text-xs mt-1 ${isMyMessage(message.sender) ? 'text-indigo-200' : 'text-gray-500'
+                  }`}>
                   {formatTime(message.timestamp)}
                 </p>
               </div>

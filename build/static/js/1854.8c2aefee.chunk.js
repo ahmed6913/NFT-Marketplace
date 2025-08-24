@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunknft_marketplace=self.webpackChunknft_marketplace||[]).push([[1854],{71854:(e,n,r)=>{r.r(n),r.d(n,{cursorSvg:()=>s});var a,l=r(57528);const s=(0,r(37022).JW)(a||(a=(0,l.A)([' <svg fill="none" viewBox="0 0 13 4">\n  <path fill="currentColor" d="M.5 0h12L8.9 3.13a3.76 3.76 0 0 1-4.8 0L.5 0Z" />\n</svg>'])))}}]);
-//# sourceMappingURL=1854.8c2aefee.chunk.js.map

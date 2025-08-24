@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunknft_marketplace=self.webpackChunknft_marketplace||[]).push([[9867],{69867:(e,n,l)=>{l.r(n),l.d(n,{chevronTopSvg:()=>c});var a,r=l(57528);const c=(0,l(37022).JW)(a||(a=(0,r.A)(['<svg fill="none" viewBox="0 0 16 16">\n  <path\n    fill="currentColor"\n    fill-rule="evenodd"\n    d="M14.54 11.04a1 1 0 0 1-1.41 0L8 5.92l-5.13 5.12a1 1 0 1 1-1.41-1.41l5.83-5.84a1 1 0 0 1 1.42 0l5.83 5.84a1 1 0 0 1 0 1.41Z"\n    clip-rule="evenodd"\n  />\n</svg>'])))}}]);
-//# sourceMappingURL=9867.9bb045e4.chunk.js.map

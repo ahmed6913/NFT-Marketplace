@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunknft_marketplace=self.webpackChunknft_marketplace||[]).push([[1284],{21284:(e,l,n)=>{n.r(l),n.d(l,{arrowRightSvg:()=>t});var a,r=n(57528);const t=(0,n(37022).JW)(a||(a=(0,r.A)(['<svg fill="none" viewBox="0 0 14 15">\n  <path\n    fill="currentColor"\n    fill-rule="evenodd"\n    d="M1 7.99a1 1 0 0 1 1-1h7.58L7.12 4.53A1 1 0 1 1 8.54 3.1l4.16 4.17a1 1 0 0 1 0 1.41l-4.16 4.17a1 1 0 1 1-1.42-1.41l2.46-2.46H2a1 1 0 0 1-1-1Z"\n    clip-rule="evenodd"\n  />\n</svg>'])))}}]);
-//# sourceMappingURL=1284.469ca2e6.chunk.js.map

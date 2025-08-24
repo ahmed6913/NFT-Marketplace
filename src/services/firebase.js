@@ -14,14 +14,15 @@ import {
   getDocs
 } from 'firebase/firestore';
 
-// Firebase configuration - replace with your config
+// Firebase configuration
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY || "your-api-key",
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN || "your-project.firebaseapp.com",
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID || "your-project-id",
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET || "your-project.appspot.com",
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID || "123456789",
-  appId: process.env.REACT_APP_FIREBASE_APP_ID || "your-app-id"
+  apiKey: "AIzaSyDUCJNRPHyIF-Qs9B4dXKvxWNMkjvykUrQ",
+  authDomain: "nft-marketplace-81f39.firebaseapp.com",
+  projectId: "nft-marketplace-81f39",
+  storageBucket: "nft-marketplace-81f39.firebasestorage.app",
+  messagingSenderId: "649071383537",
+  appId: "1:649071383537:web:3291865e2db05e89936a50",
+  measurementId: "G-K9V7Y5S1QD"
 };
 
 // Initialize Firebase
@@ -46,9 +47,9 @@ export const createChat = async (wallet1, wallet2) => {
     
     await setDoc(chatRef, {
       participants: [wallet1.toLowerCase(), wallet2.toLowerCase()],
-      createdAt: serverTimestamp(),
+      createdAt: new Date().toISOString(),
       lastMessage: null,
-      lastMessageTime: null
+      lastMessageTime: new Date().toISOString()
     }, { merge: true });
     
     return chatId;
@@ -65,7 +66,7 @@ export const sendMessage = async (chatId, sender, content, encryptedContent) => 
     
     await addDoc(messagesRef, {
       sender: sender.toLowerCase(),
-      content: encryptedContent, // Store encrypted content
+      content: content, // Store plain text content (no encryption)
       timestamp: serverTimestamp(),
       createdAt: new Date().toISOString()
     });
