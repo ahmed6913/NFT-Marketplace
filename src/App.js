@@ -11,6 +11,7 @@ import './App.css';
 import Partner from './pages/Partner';
 import PartnerPayment from './pages/PartnerPayment';
 import MapPage from './pages/Map';
+import ChatPage from './pages/ChatPage';
 
 import {
   getDefaultConfig,
@@ -92,6 +93,7 @@ const App = () => {
             <Route path="/marketplace" element={<Marketplace />} />
             <Route path="/ownednfts" element={<OwnedNFTs />} />
             <Route path="/map" element={<MapPage />} />
+            <Route path="/chat" element={<ChatPage />} />
             <Route path="/profile" element={<Profile />} />
           </Routes>
         </RainbowKitProvider>

@@ -14,7 +14,8 @@ function Navbar() {
     { label: 'Market Place', route: '/marketplace' },
     { label: 'NFTs Owned', route: '/ownednfts' },
     { label: 'Profile', route: '/profile' },
-    { label: 'Map', route: '/map' }, // ✅ NEW PAGE
+    { label: 'Map', route: '/map' },
+    { label: 'Chat', route: '/chat' }, // ✅ NEW CHAT FEATURE
   ];
 
   const handleNavClick = (route) => {
