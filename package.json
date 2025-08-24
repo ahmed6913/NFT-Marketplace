@@ -12,6 +12,7 @@
     "@testing-library/user-event": "^13.5.0",
     "canvas-confetti": "^1.9.3",
     "emailjs-com": "^3.2.0",
+    "ethers": "^6.15.0",
     "firebase": "^11.10.0",
     "framer-motion": "^12.23.0",
     "leaflet": "^1.9.4",
